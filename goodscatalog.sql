@@ -1,0 +1,30 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : a
+Source Server Version : 50051
+Source Host           : localhost:3306
+Source Database       : db_shop
+
+Target Server Type    : MYSQL
+Target Server Version : 50051
+File Encoding         : 65001
+
+Date: 2014-05-11 17:10:33
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `goodscatalog`
+-- ----------------------------
+DROP TABLE IF EXISTS `goodscatalog`;
+CREATE TABLE `goodscatalog` (
+  `Catelogid` int(4) NOT NULL auto_increment,
+  `Catalogname` varchar(20) NOT NULL,
+  PRIMARY KEY  (`Catelogid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of goodscatalog
+-- ----------------------------
