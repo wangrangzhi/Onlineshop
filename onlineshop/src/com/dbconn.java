@@ -81,12 +81,16 @@ public class dbconn {
 		boolean flag = false;
 		try {
 			stmt = conn.createStatement();
+			
 			stmt.executeUpdate(sql);
+			
 			System.out.println("更新成功");
 			flag = true;
 		}  catch (SQLException e) {
 			System.out.println("更新数据发生错误");
+			System.out.println(e.getMessage());
 		}
+		
 		
 		return flag;
 		

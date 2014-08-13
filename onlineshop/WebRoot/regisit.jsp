@@ -16,57 +16,7 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	
-	<script language="javascript">
 
-
-function check()
-{
-	if(document.form.regname.value=="")
-	{
-		alert("注册名不能为空");
-		document.form.regname.focus();
-		return false;
-	}
-	else if(document.form.realname.value=="")
-	{
-		alert("真实姓名不能为空");
-		document.form.realname.focus();
-		return false;
-	}
-	else if(document.form.psw.value=="")
-	{
-		alert("密码不能为空");
-		document.form.psw.focus();
-		return false;
-	}
-	else if(document.form.addr.value=="")
-	{
-		alert("地址不能为空");
-		document.form.addr.focus();
-		return false;
-	}
-	else if(document.form.idfycard.value=="")
-	{
-		alert("身份证不能为空");
-		document.form.idfycard.focus();
-		return false;
-	}
-	else if(document.form.bankID.value=="")
-	{
-		alert("银行卡号不能为空");
-		document.form.bankID.focus();
-		return false;
-	}
-	else
-	{
-
-	form.target="_parent";
-	form.submit();
-	}
-
-}
-</script>
 
   </head>
   
@@ -118,6 +68,16 @@ function check()
 									<option value="12">12</option>
 
 								</select>
+								
+								    <select name="day">
+            <%
+		for(int i=1;i<32;i++)
+		{
+			out.println("<option value="+i+">"+i+"</option>");
+		}
+	%>
+            </select>
+          日
 
 						</td>
 					</tr>
@@ -140,7 +100,7 @@ function check()
 						<td><input type="text" name="idfycard" ></td>
 					</tr>
 					<tr>
-						<td><input type="button" value="注册" name="Submit" onClick="check()" /></td>
+						<td> <input type="submit" value="Submit" name="submit"/></td>
 						<td>
 							<input type="button" value="返回" name="Submit2" onclick="windows.history.go(-1);">
 

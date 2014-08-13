@@ -52,6 +52,12 @@ public class registaction extends HttpServlet {
 		out.println(", using the GET method");
 		out.println("  </BODY>");
 		out.println("</HTML>");
+		int a[2][3];   
+
+		int b[][3]={0,1,2,3}; 
+		int c[1] ={0};   
+		int d[3][]={{1,2},{1,2,3},{1,2,3,4}}; 
+		
 		out.flush();
 		out.close();
 	}
@@ -62,12 +68,12 @@ public class registaction extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-		String regname, realname, psw, birthday, sexy, email, addr, idfycard, bankID;
+		String regname, realname, password, birthday, sexy, email, addr, idfycard, bankID;
 		String year, month, day;
 		
 		regname = request.getParameter("regname");
 		realname = request.getParameter("realname");
-		psw = request.getParameter("psw");
+		password = request.getParameter("psw");
 		year = request.getParameter("year");
 		month = request.getParameter("month");
 		day = request.getParameter("day");
@@ -79,12 +85,12 @@ public class registaction extends HttpServlet {
 		bankID = request.getParameter("bankID");
 		
 		dbconn dbcon = new dbconn();
-		
-		String insertStr = "insert into userinfo(regname,realname,psw,birthday,sexy,email,addr,idfycard,bankID) values";
+				
+		String insertStr = "insert into userinfo(regname,realname,password,birthday,sexy,email,Address,Identifyid,bankID) values";
 		
 		insertStr=insertStr+"('"+regname+"',";
 		insertStr=insertStr+"'"+realname+"',";
-		insertStr=insertStr+"'"+psw+"',";
+		insertStr=insertStr+"'"+password+"',";
 		insertStr=insertStr+"'"+birthday+"',";
 		insertStr=insertStr+"'"+sexy+"',";
 		insertStr=insertStr+"'"+email+"',";
@@ -93,6 +99,7 @@ public class registaction extends HttpServlet {
 		insertStr=insertStr+"'"+bankID+"')";
 			
 		boolean flag = dbcon.executeUpdate(insertStr);
+		
 		if(flag == true)
 		{
 			dbcon.destroy();
